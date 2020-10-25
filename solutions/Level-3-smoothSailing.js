@@ -56,3 +56,21 @@ function isLucky(n) {
     return false
 }
 
+// PROBLEM 4 SOLUTION
+function sortByHeight(a) {
+    let treesIndex = []
+    let people = []
+    for (let i in a) {
+      if (a[i] === -1) {
+        treesIndex.push(i)
+      } else {
+        people.push(a[i])
+      }
+    }
+    let sorted = people.sort((a, b) => a-b)
+    for (let i of treesIndex) {
+      sorted.splice(i, 0, -1)
+    }
+    return sorted
+}
+
