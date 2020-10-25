@@ -37,3 +37,22 @@ function commonCharacterCount(s1, s2) {
     }
     return count
 }
+
+// PROBLEM 3 SOLUTION
+function isLucky(n) {
+    let arr = n.toString().split('')
+    let len = arr.length
+    let firstHalf = arr.slice(0, len/2)
+    let secondHalf = arr.slice(len/2)
+    let total1 = 0
+    let total2 = 0
+    console.log(firstHalf, secondHalf)
+    firstHalf.map(num => total1 += parseInt(num))
+    secondHalf.map(num => total2 += parseInt(num))
+    console.log(total1, total2)
+    if (total1 === total2) {
+      return true
+    }
+    return false
+}
+
