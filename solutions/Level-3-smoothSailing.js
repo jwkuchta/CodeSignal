@@ -91,6 +91,7 @@ function reverseOnce(s){
 }
 
 // OR
+// this one was interesting, write a blogpost about it !!!
 function reverseInParentheses(string){
     if (string.includes('(')){
         let regex = /\(([^()]*)\)/i
@@ -99,7 +100,7 @@ function reverseInParentheses(string){
         string = string.replace(regex, subStr)
         return reverseInParentheses(string)
     } else {     
-        return string;
+        return string
     }
 }
 
