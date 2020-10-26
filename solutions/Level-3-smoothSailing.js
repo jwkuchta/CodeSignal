@@ -74,3 +74,32 @@ function sortByHeight(a) {
     return sorted
 }
 
+// PROBLEM 5 SOLUTION
+function reverseInParentheses(){
+    if (s.includes('(')){
+        return reverseInParentheses(reverseOnce(s));
+    } else {     
+        return s;
+    }
+}
+
+function reverseOnce(s){
+    var regex = /\(([^()]*)\)/i;
+    var subStr = regex.exec(s)[1];
+    subStr = subStr.split('').reverse().join('');
+    return s.replace(regex, subStr)
+}
+
+// OR
+function reverseInParentheses(string){
+    if (string.includes('(')){
+        let regex = /\(([^()]*)\)/i
+        let subStr = regex.exec(string)[1]
+        subStr = subStr.split('').reverse().join('')
+        string = string.replace(regex, subStr)
+        return reverseInParentheses(string)
+    } else {     
+        return string;
+    }
+}
+
